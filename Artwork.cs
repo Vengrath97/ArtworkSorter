@@ -15,12 +15,12 @@ namespace VenConSort
         public Artwork()
         {
 
-        }
-        public string GetTitle()
-        {
-            return (Title);
-        }
-        public void SetTitle(string NewTitle)
+    }
+    public string GetTitle()
+    {
+        return (Title);
+    }
+    public void SetTitle(string NewTitle)
         {
             this.Title = NewTitle;
         }

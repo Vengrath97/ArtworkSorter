@@ -8,10 +8,10 @@ namespace VenConSort
 {
     class Song : Artwork
     {
-        string Title { get; set; }
-        int Year { get; set; }
-        string Genre { get; set; }
-        string Artist { get; set; }
+        string Title;
+        int Year;
+        string Genre;
+        string Artist;
         public Song()
         {
 

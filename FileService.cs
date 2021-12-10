@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace VenConSort
@@ -28,17 +25,17 @@ namespace VenConSort
         }
         public static void SaveMemoryAsFile(string FilePath, List<Artwork> List)
         {
-            System.IO.File.WriteAllText(FilePath, "");
+            File.WriteAllText(FilePath, "");
             foreach (Artwork item in List)
             {
-                System.IO.File.AppendAllText(FilePath, item.GetTitle());
-                System.IO.File.AppendAllText(FilePath, "\n");
-                System.IO.File.AppendAllText(FilePath, item.GetYear().ToString());
-                System.IO.File.AppendAllText(FilePath, "\n");
-                System.IO.File.AppendAllText(FilePath, item.GetGenre());
-                System.IO.File.AppendAllText(FilePath, "\n");
-                System.IO.File.AppendAllText(FilePath, item.GetArtist());
-                System.IO.File.AppendAllText(FilePath, "\n");
+                File.AppendAllText(FilePath, item.GetTitle());
+                File.AppendAllText(FilePath, "\n");
+                File.AppendAllText(FilePath, item.GetYear().ToString());
+                File.AppendAllText(FilePath, "\n");
+                File.AppendAllText(FilePath, item.GetGenre());
+                File.AppendAllText(FilePath, "\n");
+                File.AppendAllText(FilePath, item.GetArtist());
+                File.AppendAllText(FilePath, "\n");
             }
         }
         public static List<Artwork> LoadMoviesFromFile(string FilePath, List<Artwork> artworklist)

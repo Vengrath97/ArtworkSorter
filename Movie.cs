@@ -8,13 +8,5 @@ namespace VenConSort
 {
     class Movie : Artwork
     {
-        string Title;
-        int Year;
-        string Genre;
-        string Artist;
-        public Movie()
-        {
-
-        }
     }
 }

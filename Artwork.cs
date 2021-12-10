@@ -17,9 +17,9 @@ namespace VenConSort
 
     }
     public string GetTitle()
-    {
+        {
         return (Title);
-    }
+        }
     public void SetTitle(string NewTitle)
         {
             this.Title = NewTitle;

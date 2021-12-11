@@ -15,7 +15,6 @@ namespace VenConSort
             Console.WriteLine($"Genre:      { Object.GetGenre() }");
             Console.WriteLine($"By Artist:  { Object.GetArtist() }");
         }
-
         public static void GatherDataWizard(Artwork Object)
         {
             Console.Clear();

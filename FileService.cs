@@ -23,7 +23,7 @@ namespace VenConSort
             }
             Console.ReadKey();
         }
-        public static void SaveMemoryAsFile(string FilePath, List<Artwork> List)
+        public static void OLDSaveMemoryAsFile(string FilePath, List<Artwork> List)
         {
             File.WriteAllText(FilePath, "");
             foreach (Artwork item in List)
@@ -38,10 +38,29 @@ namespace VenConSort
                 File.AppendAllText(FilePath, "\n");
             }
         }
+        public static void SaveMemoryAsFile(string FilePath, List<Artwork> List)
+        {
+            File.WriteAllText(FilePath, "");
+            foreach (Artwork item in List)
+            {
+                string temp = Converter.ToString(item) + "\n";
+                File.AppendAllText(FilePath, temp);
+            }
+        }
         public static List<Artwork> LoadMoviesFromFile(string FilePath, List<Artwork> artworklist)
         {
             string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
-            for (int i = 0; 4*i < ArtworkListFull.Length; i += 1)
+            foreach (string item in ArtworkListFull)
+            {
+                string[] data = Converter.DataSpliter(item);
+                artworklist.Add(new Movie(data));
+            }
+            return artworklist;
+        }
+        public static List<Artwork> OLDLoadMoviesFromFile(string FilePath, List<Artwork> artworklist)
+        {
+            string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
+            for (int i = 0; 4 * i < ArtworkListFull.Length; i += 1)
             {
                 artworklist.Add(new Movie());
                 artworklist[i].SetTitle(ArtworkListFull[4 * i]);
@@ -52,6 +71,16 @@ namespace VenConSort
             return artworklist;
         }
         public static List<Artwork> LoadSongsFromFile(string FilePath, List<Artwork> artworklist)
+        {
+            string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
+            foreach (string item in ArtworkListFull)
+            {
+                string[] data = Converter.DataSpliter(item);
+                artworklist.Add(new Song(data));
+            }
+            return artworklist;
+        }
+        public static List<Artwork> OLDLoadSongsFromFile(string FilePath, List<Artwork> artworklist)
         {
             string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
             for (int i = 0; 4 * i < ArtworkListFull.Length; i += 1)

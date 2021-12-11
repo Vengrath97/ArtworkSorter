@@ -15,9 +15,9 @@ namespace VenConSort
         public Movie(string[] dane) 
         {
             SetTitle(dane[0]);
-            SetYear(int.Parse(dane[0]));
-            SetGenre(dane[0]);
-            SetArtist(dane[0]);
+            SetYear(int.Parse(dane[1]));
+            SetGenre(dane[2]);
+            SetArtist(dane[3]);
         }
     }
 }

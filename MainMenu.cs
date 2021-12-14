@@ -57,11 +57,11 @@ namespace VenConSort
         }
         static void Displaymovies()
         {
-            Memory.DisplayMovies(Memory.movieList);
+            Memory.DisplayAList(Memory.movieList);
         }
         static void Displaysongs()
         {
-            Memory.DisplaySongs(Memory.songList);
+            Memory.DisplayAList(Memory.songList);
         }
         static void LoseProgressMovies()
         {
@@ -71,7 +71,7 @@ namespace VenConSort
         static void LoseProgressSongs()
         {
             Memory.songList.Clear(); 
-            FileService.LoadSongsFromFile(Memory.SonglistPath, Memory.songList);
+            FileService.LoadSongsFromFile(Memory.SonglistPath);
         }
         static void Savemovies()
         {

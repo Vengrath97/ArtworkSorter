@@ -14,7 +14,7 @@ namespace VenConSort
             FileCheck(movielistPath);
             FileCheck(songlistPath);
             Memory.movieList = LoadMoviesFromFile(Memory.MovielistPath);
-            LoadSongsFromFile(Memory.SonglistPath, Memory.songList);
+            Memory.songList = LoadSongsFromFile(Memory.SonglistPath);
         }
         public static void FileCheck(string FilePath)
         {
@@ -61,8 +61,9 @@ namespace VenConSort
             return artworklist;
         }
 
-        public static List<Song> LoadSongsFromFile(string FilePath, List<Song> artworklist)
+        public static List<Song> LoadSongsFromFile(string FilePath)
         {
+            List<Song> artworklist = new List<Song>();
             string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
             foreach (string item in ArtworkListFull)
             {

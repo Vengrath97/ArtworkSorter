@@ -27,26 +27,59 @@ namespace VenConSort
             switch (DisplayMain())
             {
                 // Creates a new Movie-type Entry and adds it on the end of the MovieListName
-                case 1:  { Memory.movieList.Add(new Movie()); break; }
+                case 1: { Addmovie(); break; }
                 // Displays all Movie-type Entries from memory
-                case 2:  { Memory.DisplayMovies(Memory.movieList);  break; }
+                case 2: { Displaymovies(); break; }
                 // Creates a new Song-type Entry and adds it on the end of the SongListName
-                case 3 : { Memory.songList.Add(new Song()); break; }
+                case 3: { Addsong(); break; }
                 // Displays all Song-type Entries from memory
-                case 4:  { Memory.DisplaySongs(Memory.songList); break; }
+                case 4: { Displaysongs(); break; }
                 // Loads data about Movies from savefile to aplication memory. Does not save current progress.
-                case 5:  { Memory.movieList.Clear(); FileService.LoadMoviesFromFile(Memory.MovielistPath, Memory.movieList); break; }
+                case 5: { LoseProgressMovies(); break; }
                 // Loads data about Songs  from savefile to aplication memory. Does not save current progress.
-                case 6: { Memory.songList.Clear(); FileService.LoadSongsFromFile(Memory.SonglistPath, Memory.songList); break; }
+                case 6: { LoseProgressSongs(); break; }
                 // Saves data about Movies from memory to savefile
-                case 7: { FileService.SaveAsFile(Memory.movieList, Memory.MovielistPath); break; } 
+                case 7: { Savemovies(); break; }
                 // Saves data about Songs from memory to savefile
-                case 8: { FileService.SaveAsFile(Memory.songList, Memory.SonglistPath); break; }
+                case 8: { Savesongs(); break; }
                 // Displays error when an option choosen does not match the available options
                 default: { Console.WriteLine(""); break; }
 
             }
         }
-
+        static void Addmovie()
+        {
+            Memory.movieList.Add(new Movie());
+        }
+        static void Addsong()
+        {
+            Memory.songList.Add(new Song());
+        }
+        static void Displaymovies()
+        {
+            Memory.DisplayMovies(Memory.movieList);
+        }
+        static void Displaysongs()
+        {
+            Memory.DisplaySongs(Memory.songList);
+        }
+        static void LoseProgressMovies()
+        {
+            Memory.movieList.Clear();
+            FileService.LoadMoviesFromFile(Memory.MovielistPath);
+        }
+        static void LoseProgressSongs()
+        {
+            Memory.songList.Clear(); 
+            FileService.LoadSongsFromFile(Memory.SonglistPath, Memory.songList);
+        }
+        static void Savemovies()
+        {
+            FileService.SaveAsFile(Memory.movieList, Memory.MovielistPath);
+        }
+        static void Savesongs()
+        {
+            FileService.SaveAsFile(Memory.songList, Memory.SonglistPath);
+        }
     }
 }

@@ -9,11 +9,11 @@ namespace VenConSort
 {
     class FileService
     {
-        public static void Initialize(string movielistPath, string songlistPath)
+        public static void MakeSureAllFilesThatAreRequiredForThisProgramToWorkExistAndCreateThemIfTheyDontAndThenLoadDataThatIsContainedWithinThemToProgramMemory(string movielistPath, string songlistPath)
         {
             FileCheck(movielistPath);
             FileCheck(songlistPath);
-            LoadMoviesFromFile(Memory.MovielistPath, Memory.movieList);
+            Memory.movieList = LoadMoviesFromFile(Memory.MovielistPath);
             LoadSongsFromFile(Memory.SonglistPath, Memory.songList);
         }
         public static void FileCheck(string FilePath)
@@ -49,8 +49,9 @@ namespace VenConSort
                 File.AppendAllText(FilePath, item.ToString() + "\n");
             }
         }
-        public static List<Movie> LoadMoviesFromFile(string FilePath, List<Movie> artworklist)
+        public static List<Movie> LoadMoviesFromFile(string FilePath)
         {
+            List<Movie> artworklist = new List<Movie>() ;
             string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
             foreach (string item in ArtworkListFull)
             {

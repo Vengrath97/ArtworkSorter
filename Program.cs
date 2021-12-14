@@ -8,7 +8,7 @@ namespace VenConSort
     {
         static void Main()
         {
-            FileService.Initialize(Memory.MovielistPath, Memory.SonglistPath);
+            FileService.MakeSureAllFilesThatAreRequiredForThisProgramToWorkExistAndCreateThemIfTheyDontAndThenLoadDataThatIsContainedWithinThemToProgramMemory(Memory.MovielistPath, Memory.SonglistPath);
             while (true) { MainMenu.MenuChoice(); }
         }
     }

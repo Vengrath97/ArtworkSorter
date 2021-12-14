@@ -53,5 +53,17 @@ namespace VenConSort
         {
             return (this.Title + "," + this.Year + "," + this.Genre + "," + this.Artist + "," + this.LeadActor);
         }
+
+        public static List<Movie> LoadFromFile(string FilePath)
+        {
+            List<Movie> artworklist = new List<Movie>();
+            string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
+            foreach (string item in ArtworkListFull)
+            {
+                string[] data = Artwork.DataSplit(item);
+                artworklist.Add(new Movie(data));
+            }
+            return artworklist;
+        }
     }
 }

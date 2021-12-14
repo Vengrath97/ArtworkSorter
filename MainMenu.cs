@@ -66,12 +66,12 @@ namespace VenConSort
         static void LoseProgressMovies()
         {
             Memory.movieList.Clear();
-            FileService.LoadMoviesFromFile(Memory.MovielistPath);
+            Movie.LoadFromFile(Memory.MovielistPath);
         }
         static void LoseProgressSongs()
         {
             Memory.songList.Clear(); 
-            FileService.LoadSongsFromFile(Memory.SonglistPath);
+            Song.LoadFromFile(Memory.SonglistPath);
         }
         static void Savemovies()
         {

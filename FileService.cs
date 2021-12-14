@@ -12,14 +12,14 @@ namespace VenConSort
         public static void Prepare(string movielistPath, string songlistPath)
         {
             FileCheck(movielistPath);
-            FileCheck(songlistPath);
-            Memory.movieList = LoadMoviesFromFile(Memory.MovielistPath);
-            Memory.songList = LoadSongsFromFile(Memory.SonglistPath);
+            FileCheck( songlistPath);
+            Memory.movieList    =   Movie.LoadFromFile(Memory.MovielistPath);
+            Memory.songList     =   Song.LoadFromFile (Memory.SonglistPath );
         }
         public static void FileCheck(string FilePath)
         {
-            if (!File.Exists(FilePath)) 
-            {
+            if (!File.Exists(FilePath))
+            { 
                 File.WriteAllText(FilePath, ""); 
             }
         }
@@ -48,29 +48,6 @@ namespace VenConSort
             {
                 File.AppendAllText(FilePath, item.ToString() + "\n");
             }
-        }
-        public static List<Movie> LoadMoviesFromFile(string FilePath)
-        {
-            List<Movie> artworklist = new List<Movie>() ;
-            string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
-            foreach (string item in ArtworkListFull)
-            {
-                string[] data = Artwork.DataSplit(item);
-                artworklist.Add(new Movie(data));
-            }
-            return artworklist;
-        }
-
-        public static List<Song> LoadSongsFromFile(string FilePath)
-        {
-            List<Song> artworklist = new List<Song>();
-            string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
-            foreach (string item in ArtworkListFull)
-            {
-                string[] data = Artwork.DataSplit(item);
-                artworklist.Add(new Song(data));
-            }
-            return artworklist;
         }
     }
 }

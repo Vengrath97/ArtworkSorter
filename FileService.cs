@@ -9,7 +9,7 @@ namespace VenConSort
 {
     class FileService
     {
-        public static void MakeSureAllFilesThatAreRequiredForThisProgramToWorkExistAndCreateThemIfTheyDontAndThenLoadDataThatIsContainedWithinThemToProgramMemory(string movielistPath, string songlistPath)
+        public static void Prepare(string movielistPath, string songlistPath)
         {
             FileCheck(movielistPath);
             FileCheck(songlistPath);

@@ -1,16 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace VenConSort
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            FileService.Initialize(Memory.MovielistPath, Memory.MovieList, Memory.SonglistPath, Memory.SongList);
-            while (true)
-            {
-                MainMenu.MenuChoice();
-            }
+            FileService.Initialize(Memory.MovielistPath, Memory.SonglistPath);
+            while (true) { MainMenu.MenuChoice(); }
         }
     }
 }

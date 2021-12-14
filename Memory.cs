@@ -6,12 +6,30 @@ using System.Threading.Tasks;
 
 namespace VenConSort
 {
-    class Memory
+     class Memory
     {
-        public static List<Artwork> MovieList = new List<Artwork>();    //List of Song-Class objects
-        public static string MovielistPath = "Movielist.css";           //Filename for list of movies and their data
+        public static List<Song> songList = new List<Song>();  //List of objects
+        public static List<Movie> movieList = new List<Movie>();  //List of objects
+        public static string MovielistPath = "Movies.css";          //Filename for list of movies and their data
+        public static string SonglistPath = "Songs.css";            //Filename for list of songs and their data
 
-        public static List<Artwork> SongList = new List<Artwork>();     //List of Movie-Class objects
-        public static string SonglistPath = "Songlist.css";             //Filename for list of songs and their data
+        public static void DisplaySongs(List<Song> songList)
+        {
+            Console.Clear();
+            foreach (Song item in songList)
+            {
+                item.PrintEntry();
+            }
+            Console.ReadKey();
+        }
+        public static void DisplayMovies(List<Movie> movieList)
+        {
+            Console.Clear();
+            foreach (Movie item in movieList)
+            {
+                item.PrintEntry();
+            }
+            Console.ReadKey();
+        }
     }
 }

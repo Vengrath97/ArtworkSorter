@@ -1,0 +1,16 @@
+C:\Users\Vengrath\source\repos\VenConSort2\bin\Debug\net5.0\VenConSort2.exe
+C:\Users\Vengrath\source\repos\VenConSort2\bin\Debug\net5.0\VenConSort2.deps.json
+C:\Users\Vengrath\source\repos\VenConSort2\bin\Debug\net5.0\VenConSort2.runtimeconfig.json
+C:\Users\Vengrath\source\repos\VenConSort2\bin\Debug\net5.0\VenConSort2.runtimeconfig.dev.json
+C:\Users\Vengrath\source\repos\VenConSort2\bin\Debug\net5.0\VenConSort2.dll
+C:\Users\Vengrath\source\repos\VenConSort2\bin\Debug\net5.0\ref\VenConSort2.dll
+C:\Users\Vengrath\source\repos\VenConSort2\bin\Debug\net5.0\VenConSort2.pdb
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.csproj.AssemblyReference.cache
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.AssemblyInfoInputs.cache
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.AssemblyInfo.cs
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.csproj.CoreCompileInputs.cache
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.dll
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\ref\VenConSort2.dll
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.pdb
+C:\Users\Vengrath\source\repos\VenConSort2\obj\Debug\net5.0\VenConSort2.genruntimeconfig.cache

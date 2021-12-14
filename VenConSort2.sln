@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VenConSort", "VenConSort.csproj", "{275C6D47-81B1-42B5-A25B-63BAFA04C591}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VenConSort2", "VenConSort2.csproj", "{B661FCFA-E6A4-4438-9232-692D10B6A5DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{275C6D47-81B1-42B5-A25B-63BAFA04C591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{275C6D47-81B1-42B5-A25B-63BAFA04C591}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{275C6D47-81B1-42B5-A25B-63BAFA04C591}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{275C6D47-81B1-42B5-A25B-63BAFA04C591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B661FCFA-E6A4-4438-9232-692D10B6A5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B661FCFA-E6A4-4438-9232-692D10B6A5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B661FCFA-E6A4-4438-9232-692D10B6A5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B661FCFA-E6A4-4438-9232-692D10B6A5DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AA3BF4F8-3468-477D-A80B-BF6DCC8D400B}
+		SolutionGuid = {BAF6A21A-8A1B-4B26-9169-12461A31AB0E}
 	EndGlobalSection
 EndGlobal

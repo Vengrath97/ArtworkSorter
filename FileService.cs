@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.IO;
 
 namespace VenConSort
 {
     class FileService
     {
+        public static void Initialize(string movielistPath, string songlistPath)
+        {
+            FileCheck(movielistPath);
+            FileCheck(songlistPath);
+            LoadMoviesFromFile(Memory.MovielistPath, Memory.movieList);
+            LoadSongsFromFile(Memory.SonglistPath, Memory.songList);
+        }
         public static void FileCheck(string FilePath)
         {
-            if (!File.Exists(FilePath))
+            if (!File.Exists(FilePath)) 
             {
-                File.WriteAllText(FilePath, "");
+                File.WriteAllText(FilePath, ""); 
             }
         }
         public static void PrintFile(string FilePath)
@@ -23,41 +33,42 @@ namespace VenConSort
             }
             Console.ReadKey();
         }
-        public static void SaveMemoryAsFile(string FilePath, List<Artwork> List)
+        public static void SaveAsFile(List<Song> list, string FilePath)
         {
             File.WriteAllText(FilePath, "");
-            foreach (Artwork item in List)
+            foreach (Song item in list)
             {
-                string temp = Converter.ToString(item) + "\n";
-                File.AppendAllText(FilePath, temp);
+                File.AppendAllText(FilePath, item.ToString() + "\n");
             }
         }
-        public static List<Artwork> LoadMoviesFromFile(string FilePath, List<Artwork> artworklist)
+        public static void SaveAsFile(List<Movie> list, string FilePath)
+        {
+            File.WriteAllText(FilePath, "");
+            foreach (Movie item in list)
+            {
+                File.AppendAllText(FilePath, item.ToString() + "\n");
+            }
+        }
+        public static List<Movie> LoadMoviesFromFile(string FilePath, List<Movie> artworklist)
         {
             string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
             foreach (string item in ArtworkListFull)
             {
-                string[] data = Converter.DataSpliter(item);
+                string[] data = Artwork.DataSplit(item);
                 artworklist.Add(new Movie(data));
             }
             return artworklist;
         }
-        public static List<Artwork> LoadSongsFromFile(string FilePath, List<Artwork> artworklist)
+
+        public static List<Song> LoadSongsFromFile(string FilePath, List<Song> artworklist)
         {
             string[] ArtworkListFull = System.IO.File.ReadAllLines(FilePath);
             foreach (string item in ArtworkListFull)
             {
-                string[] data = Converter.DataSpliter(item);
+                string[] data = Artwork.DataSplit(item);
                 artworklist.Add(new Song(data));
             }
             return artworklist;
-        }
-        public static void Initialize(string MovielistPath, List<Artwork> MovieList, string SonglistPath, List<Artwork> SongList)
-        {
-            FileCheck(MovielistPath);
-            FileCheck(SonglistPath);
-            LoadMoviesFromFile(MovielistPath, MovieList);
-            LoadSongsFromFile(SonglistPath, SongList);
         }
     }
 }

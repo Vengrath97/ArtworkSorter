@@ -35,16 +35,16 @@ namespace VenConSort
             Artist = dane[2];
             Year = int.Parse(dane[3]);
         }
+        public override string ToString()
+        {
+            return (this.Title + "," + this.Year + "," + this.Genre + "," + this.Artist);
+        }
         public override void PrintEntry()
         {
             Console.WriteLine($"Title:      { Title }");
             Console.WriteLine($"Genre:      { Genre }");
             Console.WriteLine($"By Artist:  { Artist }");
             Console.WriteLine($"Released:   { Year }\n");
-        }
-        public override string ToString()
-        {
-            return (this.Title + "," + this.Year + "," + this.Genre + "," + this.Artist);
         }
         public static List<Song> LoadFromFile(string FilePath)
         {

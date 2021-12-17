@@ -23,16 +23,6 @@ namespace VenConSort
                 File.WriteAllText(FilePath, ""); 
             }
         }
-        public static void PrintFile(string FilePath)
-        {
-            Console.Clear();
-            string[] movielistFull = System.IO.File.ReadAllLines(FilePath);
-            for (int a = 0; a < movielistFull.Length; a++)
-            {
-                Console.WriteLine(movielistFull[a]);
-            }
-            Console.ReadKey();
-        }
         public static void SaveAsFile(List<Song> list, string FilePath)
         {
             File.WriteAllText(FilePath, "");
@@ -48,6 +38,10 @@ namespace VenConSort
             {
                 File.AppendAllText(FilePath, item.ToString() + "\n");
             }
+        }
+        public static void ClearFile(string FilePath)
+        {
+            File.WriteAllText(FilePath, "");
         }
     }
 }

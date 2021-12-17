@@ -42,6 +42,10 @@ namespace VenConSort
                 case 7: { Savemovies(); break; }
                 // Saves data about Songs from memory to savefile
                 case 8: { Savesongs(); break; }
+                // Clears all data about movies from savefile
+                case 9: { EreaseMovieSave(); break; }
+                // Clears all data about movies from savefile
+                case 10: { EreaseSongSave(); break; }
                 // Displays error when an option choosen does not match the available options
                 default: { Console.WriteLine(""); break; }
 
@@ -81,5 +85,13 @@ namespace VenConSort
         {
             FileService.SaveAsFile(Memory.songList, Memory.SonglistPath);
         }
+        static void EreaseMovieSave()
+        {
+            FileService.ClearFile(Memory.MovielistPath);
+        }
+        static void EreaseSongSave()
+        {
+            FileService.ClearFile(Memory.SonglistPath);
+        }    
     }
 }

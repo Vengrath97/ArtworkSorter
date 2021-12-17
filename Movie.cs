@@ -41,6 +41,10 @@ namespace VenConSort
             Year = int.Parse(dane[3]);
             LeadActor = dane[4];
         }
+        public override string ToString()
+        {
+            return (this.Title + "," + this.Year + "," + this.Genre + "," + this.Artist + "," + this.LeadActor);
+        }
         public override void PrintEntry()
         {
             Console.WriteLine($"Title:      { Title }");
@@ -48,10 +52,6 @@ namespace VenConSort
             Console.WriteLine($"By Artist:  { Artist }");
             Console.WriteLine($"Released:   { Year }");
             Console.WriteLine($"LeadActor:   { LeadActor }\n");
-        }
-        public override string ToString()
-        {
-            return (this.Title + "," + this.Year + "," + this.Genre + "," + this.Artist + "," + this.LeadActor);
         }
 
         public static List<Movie> LoadFromFile(string FilePath)

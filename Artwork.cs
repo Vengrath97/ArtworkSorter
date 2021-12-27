@@ -20,7 +20,6 @@ namespace VenConSort
 
         public virtual void PrintEntry()
         {
-
         }
         public static string[] DataSplit(string fileLine)
         {

@@ -10,7 +10,6 @@ namespace VenConSort
     {
         private string leadActor;
         public string LeadActor { get => leadActor; set => leadActor = value; }
-
         public Movie()
         {
             Console.Clear();
@@ -22,7 +21,7 @@ namespace VenConSort
             Artist = (DataGather.InputMIN(1));
             Console.WriteLine("Proszę, wprowadź rok wydania:");
             Year = (DataGather.InputINT());
-            Console.WriteLine("Proszę, wprowadź atkora:");
+            Console.WriteLine("Proszę, wprowadź aktora:");
             LeadActor = (DataGather.InputMIN(1));
         }
         public Movie(string title, string genre, string artist, int year, string actor)
@@ -47,11 +46,12 @@ namespace VenConSort
         }
         public override void PrintEntry()
         {
-            Console.WriteLine($"Title:      { Title }");
-            Console.WriteLine($"Genre:      { Genre }");
-            Console.WriteLine($"By Artist:  { Artist }");
-            Console.WriteLine($"Released:   { Year }");
-            Console.WriteLine($"LeadActor:   { LeadActor }\n");
+            Console.WriteLine($"Title:      { Title }"      );
+            Console.WriteLine($"Genre:      { Genre }"      );
+            Console.WriteLine($"By Artist:  { Artist }"     );
+            Console.WriteLine($"Released:   { Year }"       );
+            Console.WriteLine($"LeadActor:  { LeadActor }"  );
+            Console.WriteLine($" "                          );
         }
 
         public static List<Movie> LoadFromFile(string FilePath)

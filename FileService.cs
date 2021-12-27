@@ -14,30 +14,21 @@ namespace VenConSort
             FileCheck(movielistPath);
             FileCheck( songlistPath);
             Memory.movieList    =   Movie.LoadFromFile(Memory.MovielistPath);
-            Memory.songList     =   Song.LoadFromFile (Memory.SonglistPath );
+            Memory.songList     =   Song.LoadFromFile (Memory.SonglistPath);
         }
         public static void FileCheck(string FilePath)
         {
-            if (!File.Exists(FilePath))
-            { 
-                File.WriteAllText(FilePath, ""); 
-            }
+            if (!File.Exists(FilePath)) { File.WriteAllText(FilePath, ""); }
         }
         public static void SaveAsFile(List<Song> list, string FilePath)
         {
             File.WriteAllText(FilePath, "");
-            foreach (Song item in list)
-            {
-                File.AppendAllText(FilePath, item.ToString() + "\n");
-            }
+            foreach (Song item in list) { File.AppendAllText(FilePath, item.ToString() + "\n"); }
         }
         public static void SaveAsFile(List<Movie> list, string FilePath)
         {
             File.WriteAllText(FilePath, "");
-            foreach (Movie item in list)
-            {
-                File.AppendAllText(FilePath, item.ToString() + "\n");
-            }
+            foreach (Movie item in list) { File.AppendAllText(FilePath, item.ToString() + "\n"); }
         }
         public static void ClearFile(string FilePath)
         {

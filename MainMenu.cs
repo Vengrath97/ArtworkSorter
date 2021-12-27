@@ -4,9 +4,9 @@ namespace VenConSort
 {
     class MainMenu
     {
-        static readonly int firstOptionRow = 1;
-        static readonly int optionCount = 10;
-        static int currentCursorHeight = 1;
+        static readonly int firstRow            = 1;
+        static readonly int optionCount         = 10;
+        static          int currentCursorHeight = firstRow;
         static void DisplayMain()
         {
             Console.Clear();
@@ -31,12 +31,12 @@ namespace VenConSort
         }
         static void CursorUp()
         {
-            if (currentCursorHeight == firstOptionRow) currentCursorHeight = optionCount;
+            if (currentCursorHeight == firstRow) currentCursorHeight = optionCount;
             else currentCursorHeight -= 1;
         }
         static void CursorDown()
         {
-            if (currentCursorHeight == optionCount) currentCursorHeight = firstOptionRow;
+            if (currentCursorHeight == optionCount) currentCursorHeight = firstRow;
             else currentCursorHeight += 1;
         }
         static ConsoleKey GetKey()
@@ -50,10 +50,10 @@ namespace VenConSort
             DrawCursor(currentCursorHeight);
             switch (GetKey())
             {
-                case ConsoleKey.UpArrow: { CursorUp(); break; }
-                case ConsoleKey.DownArrow: { CursorDown(); break; }
-                case ConsoleKey.Enter: { RunChoice(currentCursorHeight); break; }
-                default: { break; }
+                case ConsoleKey.UpArrow:    { CursorUp();                       break; }
+                case ConsoleKey.DownArrow:  { CursorDown();                     break; }
+                case ConsoleKey.Enter:      { RunChoice(currentCursorHeight);   break; }
+                default:                    {                                   break; }
             }
         }
         public static void RunChoice(int choice)

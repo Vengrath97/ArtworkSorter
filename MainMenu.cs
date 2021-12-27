@@ -4,10 +4,10 @@ namespace VenConSort
 {
     class MainMenu
     {
+        static readonly int firstOptionRow = 1;
+        static readonly int optionCount = 10;
         static int currentCursorHeight = 1;
-        static int firstOptionRow = 1;
-        static int optionCount = 10;
-        public static void DisplayMain()
+        static void DisplayMain()
         {
             Console.Clear();
             Console.WriteLine(
@@ -29,12 +29,21 @@ namespace VenConSort
             Console.SetCursorPosition(0, height);
             Console.Write(">");
         }
+        static void CursorUp()
+        {
+            if (currentCursorHeight == firstOptionRow) currentCursorHeight = optionCount;
+            else currentCursorHeight -= 1;
+        }
+        static void CursorDown()
+        {
+            if (currentCursorHeight == optionCount) currentCursorHeight = firstOptionRow;
+            else currentCursorHeight += 1;
+        }
         static ConsoleKey GetKey()
         {
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             return keyInfo.Key;
         }
-
         public static void MenuChoice()
         {
             DisplayMain();
@@ -47,42 +56,21 @@ namespace VenConSort
                 default: { break; }
             }
         }
-        static void CursorUp()
-        {
-            if (currentCursorHeight == firstOptionRow) currentCursorHeight = optionCount;
-            else currentCursorHeight -= 1;
-        }
-        static void CursorDown()
-        {
-            if (currentCursorHeight == optionCount) currentCursorHeight = firstOptionRow;
-            else currentCursorHeight += 1;
-        }
         public static void RunChoice(int choice)
         {
             switch (choice) 
             {
-                // Creates a new Movie-type Entry and adds it on the end of the MovieListName
-                case 1: { Addmovie(); break; }
-                // Displays all Movie-type Entries from memory
-                case 2: { Displaymovies(); break; }
-                // Creates a new Song-type Entry and adds it on the end of the SongListName
-                case 3: { Addsong(); break; }
-                // Displays all Song-type Entries from memory
-                case 4: { Displaysongs(); break; }
-                // Loads data about Movies from savefile to aplication memory. Does not save current progress.
-                case 5: { LoseProgressMovies(); break; }
-                // Loads data about Songs  from savefile to aplication memory. Does not save current progress.
-                case 6: { LoseProgressSongs(); break; }
-                // Saves data about Movies from memory to savefile
-                case 7: { Savemovies(); break; }
-                // Saves data about Songs from memory to savefile
-                case 8: { Savesongs(); break; }
-                // Clears all data about movies from savefile
-                case 9: { EreaseMovieSave(); break; }
-                // Clears all data about movies from savefile
-                case 10: { EreaseSongSave(); break; }
-                // Displays error when an option choosen does not match the available options
-                default: { break; }
+                case 1:  { Addmovie();           break; }
+                case 2:  { Displaymovies();      break; }
+                case 3:  { Addsong();            break; }
+                case 4:  { Displaysongs();       break; }
+                case 5:  { LoseProgressMovies(); break; }
+                case 6:  { LoseProgressSongs();  break; }
+                case 7:  { Savemovies();         break; }
+                case 8:  { Savesongs();          break; }
+                case 9:  { EreaseMovieSave();    break; }
+                case 10: { EreaseSongSave();     break; }
+                default: {                       break; }
             }
         }
         static void Addmovie()

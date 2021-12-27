@@ -43,12 +43,13 @@ namespace VenConSort
         }
         public override void PrintEntry()
         {
-            Console.WriteLine($"Title:      { Title }"      );
-            Console.WriteLine($"Genre:      { Genre }"      );
-            Console.WriteLine($"By Artist:  { Artist }"     );
-            Console.WriteLine($"Released:   { Year }"       );
-            Console.WriteLine($"LeadActor:  { LeadActor }"  );
-            Console.WriteLine($" "                          );
+            Console.WriteLine(
+                                $"Title:      { Title }\n" +
+                                $"Genre:      { Genre }\n" +
+                                $"By Artist:  { Artist }\n" +
+                                $"Released:   { Year }\n" +
+                                $"LeadActor:  { LeadActor }\n"
+                                );
         }
         public static List<Movie> LoadFromFile(string FilePath)
         {

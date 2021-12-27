@@ -37,11 +37,12 @@ namespace VenConSort
         }
         public override void PrintEntry()
         {
-            Console.WriteLine($"Title:      { Title }"      );
-            Console.WriteLine($"Genre:      { Genre }"      );
-            Console.WriteLine($"By Artist:  { Artist }"     );
-            Console.WriteLine($"Released:   { Year }"       );
-            Console.WriteLine($" "                          );
+            Console.WriteLine(
+                                $"Title:      { Title }\n" +
+                                $"Genre:      { Genre }\n" +
+                                $"By Artist:  { Artist }\n" +
+                                $"Released:   { Year }\n"
+                                );
         }
         public static List<Song> LoadFromFile(string FilePath)
         {

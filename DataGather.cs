@@ -4,6 +4,10 @@ namespace VenConSort
 {
     class DataGather
     {
+        // Change to false to not show errors, and just skip to re-requesting
+        // input in all functions in this class
+        //
+        // Note, that you can also delete lanes with if (showError) condition
         static readonly bool showError = true;
         //Requires user to provide a string that has int-type value
         public static int InputINT()
@@ -15,7 +19,6 @@ namespace VenConSort
                 if (showError) { Console.WriteLine("Error: user data is not int-type."); }
             }
         }
-
         //Requires user to provide a string with minimal amout of characters defined by input int min value
         public static string InputMIN(int min = 1)
         {

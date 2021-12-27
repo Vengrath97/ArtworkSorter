@@ -73,6 +73,7 @@ namespace VenConSort
                 default: {                       break; }
             }
         }
+        // Methods that make RunChoice more easy to read
         static void Addmovie()
         {
             Memory.movieList.Add(new Movie());

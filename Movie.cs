@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VenConSort
 {
@@ -53,7 +50,6 @@ namespace VenConSort
             Console.WriteLine($"LeadActor:  { LeadActor }"  );
             Console.WriteLine($" "                          );
         }
-
         public static List<Movie> LoadFromFile(string FilePath)
         {
             List<Movie> artworklist = new List<Movie>();

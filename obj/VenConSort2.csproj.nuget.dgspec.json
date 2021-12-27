@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vengrath\\source\\repos\\VenConSort\\VenConSort2.csproj": {}
+    "C:\\Users\\Vengrath\\source\\repos\\ArtworkSorter\\VenConSort2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vengrath\\source\\repos\\VenConSort\\VenConSort2.csproj": {
+    "C:\\Users\\Vengrath\\source\\repos\\ArtworkSorter\\VenConSort2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vengrath\\source\\repos\\VenConSort\\VenConSort2.csproj",
+        "projectUniqueName": "C:\\Users\\Vengrath\\source\\repos\\ArtworkSorter\\VenConSort2.csproj",
         "projectName": "VenConSort2",
-        "projectPath": "C:\\Users\\Vengrath\\source\\repos\\VenConSort\\VenConSort2.csproj",
+        "projectPath": "C:\\Users\\Vengrath\\source\\repos\\ArtworkSorter\\VenConSort2.csproj",
         "packagesPath": "C:\\Users\\Vengrath\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vengrath\\source\\repos\\VenConSort\\obj\\",
+        "outputPath": "C:\\Users\\Vengrath\\source\\repos\\ArtworkSorter\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

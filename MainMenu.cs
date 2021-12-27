@@ -4,27 +4,62 @@ namespace VenConSort
 {
     class MainMenu
     {
-        public static int DisplayMain()
+        static int currentCursorHeight = 1;
+        static int firstOptionRow = 1;
+        static int optionCount = 10;
+        public static void DisplayMain()
         {
             Console.Clear();
             Console.WriteLine(
                                 " === Witaj w Aplikacji! ===\n" +
-                                " > Wybierz 1 by dodać film\n" +
-                                " > Wybierz 2 by wyświetlić dane filmów\n" +
-                                " > Wybierz 3 by dodać piosenke\n" +
-                                " > Wybierz 4 by wyświetlić dane piosenek\n" +
-                                " > Wybierz 5 by stracić postęp edycji filmów\n" +
-                                " > Wybierz 6 by stracić postęp edycji piosenek\n" +
-                                " > Wybierz 7 by zapisać dane o filmach do pliku\n" +
-                                " > Wybierz 8 by zapisać dane o piosenkach do pliku\n" +
-                                " > Wybierz 9 by wyzerować plik z danymi o filmach\n" +
-                                " > Wybierz 10 by wyzerować plik z danymi o piosenkach\n"
+                                "   Wybierz 1 by dodać film\n" +
+                                "   Wybierz 2 by wyświetlić dane filmów\n" +
+                                "   Wybierz 3 by dodać piosenke\n" +
+                                "   Wybierz 4 by wyświetlić dane piosenek\n" +
+                                "   Wybierz 5 by stracić postęp edycji filmów\n" +
+                                "   Wybierz 6 by stracić postęp edycji piosenek\n" +
+                                "   Wybierz 7 by zapisać dane o filmach do pliku\n" +
+                                "   Wybierz 8 by zapisać dane o piosenkach do pliku\n" +
+                                "   Wybierz 9 by wyzerować plik z danymi o filmach\n" +
+                                "   Wybierz 10 by wyzerować plik z danymi o piosenkach\n"
                                 );
-            return DataGather.InputINT();
         }
+        static void DrawCursor(int height)
+        {
+            Console.SetCursorPosition(0, height);
+            Console.Write(">");
+        }
+        static ConsoleKey GetKey()
+        {
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            return keyInfo.Key;
+        }
+
         public static void MenuChoice()
         {
-            switch (DisplayMain())
+            DisplayMain();
+            DrawCursor(currentCursorHeight);
+            switch (GetKey())
+            {
+                case ConsoleKey.UpArrow: { CursorUp(); break; }
+                case ConsoleKey.DownArrow: { CursorDown(); break; }
+                case ConsoleKey.Enter: { RunChoice(currentCursorHeight); break; }
+                default: { break; }
+            }
+        }
+        static void CursorUp()
+        {
+            if (currentCursorHeight == firstOptionRow) currentCursorHeight = optionCount;
+            else currentCursorHeight -= 1;
+        }
+        static void CursorDown()
+        {
+            if (currentCursorHeight == optionCount) currentCursorHeight = firstOptionRow;
+            else currentCursorHeight += 1;
+        }
+        public static void RunChoice(int choice)
+        {
+            switch (choice) 
             {
                 // Creates a new Movie-type Entry and adds it on the end of the MovieListName
                 case 1: { Addmovie(); break; }
@@ -47,8 +82,7 @@ namespace VenConSort
                 // Clears all data about movies from savefile
                 case 10: { EreaseSongSave(); break; }
                 // Displays error when an option choosen does not match the available options
-                default: { Console.WriteLine(""); break; }
-
+                default: { break; }
             }
         }
         static void Addmovie()

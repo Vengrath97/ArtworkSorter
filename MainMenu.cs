@@ -41,7 +41,11 @@ namespace VenConSort
         }
         static ConsoleKey GetKey()
         {
-            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            ConsoleKeyInfo keyInfo;
+            do
+            {
+              keyInfo = Console.ReadKey(true);
+            } while (Console.KeyAvailable);
             return keyInfo.Key;
         }
         public static void MenuChoice()
@@ -50,10 +54,10 @@ namespace VenConSort
             DrawCursor(currentCursorHeight);
             switch (GetKey())
             {
-                case ConsoleKey.UpArrow:    { CursorUp();                       break; }
-                case ConsoleKey.DownArrow:  { CursorDown();                     break; }
-                case ConsoleKey.Enter:      { RunChoice(currentCursorHeight);   break; }
-                default:                    {                                   break; }
+                case ConsoleKey.UpArrow: { CursorUp(); break; }
+                case ConsoleKey.DownArrow: { CursorDown(); break; }
+                case ConsoleKey.Enter: { RunChoice(currentCursorHeight); break; }
+                default: { break; }
             }
         }
         public static void RunChoice(int choice)

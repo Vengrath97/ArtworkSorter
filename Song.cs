@@ -6,30 +6,13 @@ namespace VenConSort
     class Song:Artwork
     {
         public Song()
+            :base()
         {
-            Console.Clear();
-            Console.WriteLine("Proszę, wprowadź tytuł:");
-            Title = (DataGather.InputMIN(1));
-            Console.WriteLine("Proszę, wprowadź gatunek:");
-            Genre = (DataGather.InputMIN(1));
-            Console.WriteLine("Proszę, wprowadź twórcę:");
-            Artist = (DataGather.InputMIN(1));
-            Console.WriteLine("Proszę, wprowadź rok wydania:");
-            Year = (DataGather.InputINT());
-        }
-        public Song(string title, string genre, string artist, int year)
-        {
-            Title = title;
-            Genre = genre;
-            Artist = artist;
-            Year = year;
         }
         public Song(string[] dane)
+            :base(dane)
         {
-            Title = dane[0];
-            Genre = dane[1];
-            Artist = dane[2];
-            Year = int.Parse(dane[3]);
+
         }
         public override string ToString()
         {

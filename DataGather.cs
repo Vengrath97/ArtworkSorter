@@ -6,10 +6,8 @@ namespace VenConSort
     {
         // Change to false to not show errors, and just skip to re-requesting
         // input in all functions in this class
-        //
-        // Note, that you can also delete lanes with if (showError) condition
         static readonly bool showError = true;
-        //Requires user to provide a string that has int-type value
+        //Forces user to provide a string that has int-type value
         public static int InputINT()
         {
             while (true)

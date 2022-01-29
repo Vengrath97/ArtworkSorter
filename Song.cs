@@ -5,6 +5,9 @@ namespace VenConSort
 {
     class Song:Artwork
     {
+
+
+
         public Song()
             :base()
         {
